@@ -1,2 +1,16 @@
 ---
 # Role variables
+
+# Supported distributions
+
+reboot_supported_distributions:
+  - centos
+  - fedora
+  - rhel
+
+# Supported distributions versions
+
+reboot_supported_versions:
+  centos: 6
+  fedora: 27
+  rhel: 6

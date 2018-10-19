@@ -1,2 +1,18 @@
 ---
 # Role default lower priority variables
+
+# Number of seconds to delay the reboot handler
+
+reboot_delay: 2
+
+# Number of seconds to delay the wait handler
+
+reboot_wait_delay: 20
+
+# Number of seconds to sleep between wait attemps
+
+reboot_wait_sleep: 3
+
+# Timeout for wait handler
+
+reboot_wait_timeout: 300
