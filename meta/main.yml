@@ -25,7 +25,7 @@ galaxy_info:
 
 dependencies:
   - role: amtega.check_platform
-    check_plaform_distributions:
+    check_platform_distributions:
       centos: 6
       debian: 9
       fedora: 27
