@@ -12,6 +12,13 @@ See dependant roles documentation to know how to configure each one.
 
 A list of all the default variables for this role is available in `defaults/main.yml`.
 
+## Handlers
+
+The role provides the following handlers to manage the host reboot:
+
+- `reboot host`: reboot the host
+- `wait host`: wait for the host to be rebooted
+
 ## Dependencies
 
 [amtega.check_platform](https://galaxy.ansible.com/amtega/check_platform)
