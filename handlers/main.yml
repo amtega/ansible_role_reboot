@@ -10,7 +10,9 @@
   changed_when: true
   ignore_errors: true
   listen: reboot host
-  when: ansible_virtualization_type | default("") != "docker"
+  when:
+    - ansible_virtualization_type | default("") != "docker"
+    - not reboot_disable
   check_mode: no
 
 - name: reboot wait

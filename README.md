@@ -2,8 +2,6 @@
 
 This is an [Ansible](http://www.ansible.com) role which provides handlers to reboot machines.
 
-See dependant roles documentation to know how to configure each one.
-
 ## Requirements
 
 [Ansible 2.7+](http://docs.ansible.com/ansible/latest/intro_installation.html)
@@ -45,11 +43,6 @@ This is an example playbook:
 
     - meta: flush_handlers
 ```
-
-The role provides a set of useful handlers:
-
-- `reboot host`: reboot the host
-- `wait host`: wait until the host can be accessed (e.g., after reboot)
 
 ## Testing
 
