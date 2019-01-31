@@ -16,3 +16,8 @@ reboot_wait_sleep: 3
 # Timeout for wait handler
 
 reboot_wait_timeout: 300
+
+# Disable reboot. This is usefull if you don't want the reboot handler be
+# executed (e.g. you want to delay the reboot)
+
+reboot_disable: no
