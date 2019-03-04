@@ -2,9 +2,11 @@
 # Role handlers
 
 - name: reboot
-  command: >-
+  shell: >-
     sleep {{ reboot_delay }}
     && shutdown -r now 'Ansible reboot role triggered a reboot'
+  args:
+    warn: no
   async: 1
   poll: 0
   changed_when: true
