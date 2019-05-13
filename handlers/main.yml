@@ -23,5 +23,8 @@
     delay: "{{ reboot_wait_delay }}"
     timeout: "{{ reboot_wait_timeout | default(300) }}"
   changed_when: false
+  when:
+    - ansible_virtualization_type | default("") != "docker"
+    - not reboot_disable
   listen: wait host
   check_mode: no
