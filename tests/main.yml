@@ -18,14 +18,14 @@
   tags:
     - sandbox
 
-- name: test reboot role
+- name: Test reboot role
   hosts: docker_sandbox_containers
   vars:
     reboot_wait_timeout: 10
   roles:
     - amtega.reboot
   tasks:
-    - name: test reboot wait handler
+    - name: Test reboot wait handler
       copy:
         content: ""
         dest: /tmp/emptyfile1

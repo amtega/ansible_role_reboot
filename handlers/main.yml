@@ -1,7 +1,7 @@
 ---
 # Role handlers
 
-- name: reboot
+- name: Reboot
   shell: >-
     sleep {{ reboot_delay }}
     && shutdown -r now 'Ansible reboot role triggered a reboot'
@@ -11,13 +11,15 @@
   poll: 0
   changed_when: true
   ignore_errors: true
-  listen: reboot host
+  listen:
+    - reboot
+    - reboot host
   when:
     - ansible_virtualization_type | default("") != "docker"
     - not reboot_disable
   check_mode: no
 
-- name: reboot wait
+- name: Reboot wait
   wait_for_connection:
     sleep: "{{ reboot_wait_sleep }}"
     delay: "{{ reboot_wait_delay }}"
@@ -26,5 +28,7 @@
   when:
     - ansible_virtualization_type | default("") != "docker"
     - not reboot_disable
-  listen: wait host
+  listen:
+    - reboot wait
+    - wait host
   check_mode: no
