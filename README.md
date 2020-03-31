@@ -32,7 +32,7 @@ This is an example playbook:
   roles:
     - amtega.reboot
   tasks:
-    - name: create file and reboot
+    - name: Create file and reboot
       copy:
         content: ""
         dest: /tmp/emptyfile1
