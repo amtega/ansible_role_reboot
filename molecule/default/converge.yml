@@ -1,0 +1,19 @@
+---
+
+- name: Converge
+  hosts: molecule_hosts
+  gather_facts: no
+  roles:
+    - amtega.reboot
+  tasks:
+    - name: Test reboot wait handler
+      copy:
+        content: ""
+        dest: /tmp/emptyfile1
+        force: no
+        mode: 0755
+      notify:
+        - reboot wait
+
+    - name: Flush handlers
+      meta: flush_handlers
